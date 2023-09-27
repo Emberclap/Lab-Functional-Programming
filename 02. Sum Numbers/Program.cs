@@ -1,0 +1,24 @@
+﻿namespace _02._Sum_Numbers
+{
+    internal class Program
+    {
+        static void Main(string[] args)
+        {
+           // List<int> numbers = Console.ReadLine()
+           //     .Split(", ")
+           //     .Select(int.Parse)
+           //     .ToList();
+           // Console.WriteLine(numbers.Count());
+           // Console.WriteLine(numbers.Sum());
+
+
+            string input = Console.ReadLine();
+            Func<string, int> parser = n => int.Parse(n);
+            int[] numbers = input.Split(new string[] { ", " },
+            StringSplitOptions.RemoveEmptyEntries)
+            .Select(parser).ToArray();
+            Console.WriteLine(numbers.Length);
+            Console.WriteLine(numbers.Sum());
+        }
+    }
+}
